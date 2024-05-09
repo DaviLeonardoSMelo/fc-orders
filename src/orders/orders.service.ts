@@ -21,7 +21,7 @@ export class OrdersService {
     });
 
     if(products.length !== uniqueProductIds.length) {
-      throw new Error(`Some product does not exist. Past products ${productIds}, found products ${products.map((product) => product.id)}`)
+      throw new Error(`Some product does not exist. Past products ${productIds}, found products: ${products.map((product) => product.id)}`)
     }
     const order = Order.create({
       client_id: createOrderDto.client_id,
