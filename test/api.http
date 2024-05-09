@@ -1,0 +1,43 @@
+GET http://localhost:3000/products
+
+### Create Product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "description": "Product 1 description",
+    "image_url": "https://www.foto.foto/fototeste",
+    "price": 100 
+}
+
+###
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiBkdWUiLCJpYXQiOjE3MTUyNzk2MTAsImV4cCI6MTcxNTI3OTY3MH0.uYgfSLHKW8fe_K9D1xKZDwZ1teTC1fxoRrrjj_6jg60
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiBkdWUiLCJpYXQiOjE3MTUyODEwNzIsImV4cCI6MTcxNTI4MTEzMn0.A_alymXfnmqGrmcAqwK1xhGGmaFWprjFs49AuWt0c50
+
+{
+    "items": [
+        {
+            "product_id": "0d1608cd-cf1e-41f4-9126-47f3c57188c7",
+            "quantity": 1 
+        },
+        {
+            "product_id": "7edb8706-5058-4a31-abbd-a1c16a664b8d",
+            "quantity": 1 
+        }
+    ],
+    "card_hash": "123"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "john due",
+    "password": "john due"
+}
